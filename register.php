@@ -1,3 +1,9 @@
+<?php 
+require_once "db/config.php";
+require_once "db/register_func.php";
+
+
+?>
 <div class="wrapper" id="form-container-wrap">
             <div id="form-container">
                 <h2 id="new">Nuovo iscritto? Registrati!</h2>
@@ -32,3 +38,5 @@
                 </form>
             </div>
         </div>
+
+     

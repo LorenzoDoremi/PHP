@@ -37,12 +37,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     if(empty($username_err) && empty($password_err)){
       
 			  $sql = "SELECT id, nickname, password FROM membri WHERE nickname = ?";
-			   
-			 
-		
-		
-        
-        if($stmt = mysqli_prepare($link, $sql)){
+			  if($stmt = mysqli_prepare($link, $sql)){
                // Set parameters
             $param_username = $username;
             mysqli_stmt_bind_param($stmt, "s", $param_username);
@@ -67,7 +62,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                             $_SESSION["loggedin"] = true;
                             $_SESSION["id"] = $id;
                             $_SESSION["username"] = $username;
-										        header("location: http://localhost/EVENTI_DB/index.php");
+										        header("location: profile.php");
                            
                         } else{
                             // Display an error message if password is not valid
@@ -84,14 +79,18 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
             }
 
             // Close statement
-            mysqli_stmt_close($stmt);
+           mysqli_stmt_close($stmt);
         }
         else {
           echo  "error";
         }
     }
+     
   }
-    // Close connection
-    mysqli_close($link);
+
+
+   // Close connection
+   mysqli_close($link);
+  
 
 ?>

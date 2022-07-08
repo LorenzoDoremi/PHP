@@ -1,10 +1,10 @@
 <?php require_once "db/login_func.php"; ?>
 <?php include "modules/head.html";
 if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true){
-    header("location: index.php");
+    header("location: profile.php");
   exit;
 }
-unset($_SESSION['success']); ?>
+?>
 <main id="home-container">
     <div class="wrapper">
 	<div id="form-container">

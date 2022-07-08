@@ -110,15 +110,23 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         mysqli_stmt_close($stmt);
         // Redirect to login page
         $_SESSION["success"] = true;
-        header("location: http://localhost/EVENTI_DB/login.php");
+        
+        header("location: http://localhost/EVENTI_DB/index.php");
       }
     }
   } else {
       // c'è qualche errore segnalato
   }
+
+  mysqli_close($link);
 }
 
 
 
-// Close connection
-mysqli_close($link);
+
+
+
+
+
+
+
